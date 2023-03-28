@@ -7,6 +7,10 @@ dane = []
 nazwa_plik_wejsciowy = 1
 nazwa_plik_wyjsciowy = 2
 
+if len(sys.argv) < 4:
+    print('Nie podano argumentów...')
+    quit()
+
 f_in = sys.argv[nazwa_plik_wejsciowy]
 f_out = sys.argv[nazwa_plik_wyjsciowy]
 
@@ -35,8 +39,3 @@ for zmiana in nowe_dane_split:
 with open(f_out, 'w') as f:
     writer = csv.writer(f)
     writer.writerows(dane)
-
-
-
-
-
